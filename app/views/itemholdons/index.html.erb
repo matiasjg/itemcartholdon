@@ -1,0 +1,33 @@
+<h1>Listing itemholdons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shopifyid</th>
+      <th>Minstock</th>
+      <th>Active</th>
+      <th>Untildate</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @itemholdons.each do |itemholdon| %>
+      <tr>
+        <td><%= itemholdon.shopifyId %></td>
+        <td><%= itemholdon.minStock %></td>
+        <td><%= itemholdon.active %></td>
+        <td><%= itemholdon.untilDate %></td>
+        <td><%= link_to 'Show', itemholdon %></td>
+        <td><%= link_to 'Edit', edit_itemholdon_path(itemholdon) %></td>
+        <td><%= link_to 'Destroy', itemholdon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Itemholdon', new_itemholdon_path %>

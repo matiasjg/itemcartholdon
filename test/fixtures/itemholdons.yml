@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shopifyId: MyString
+  minStock: 1
+  active: false
+  untilDate: 2015-06-12 14:13:31
+
+two:
+  shopifyId: MyString
+  minStock: 1
+  active: false
+  untilDate: 2015-06-12 14:13:31

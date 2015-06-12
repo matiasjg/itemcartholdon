@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Shopifyid:</strong>
+  <%= @itemholdon.shopifyId %>
+</p>
+
+<p>
+  <strong>Minstock:</strong>
+  <%= @itemholdon.minStock %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @itemholdon.active %>
+</p>
+
+<p>
+  <strong>Untildate:</strong>
+  <%= @itemholdon.untilDate %>
+</p>
+
+<%= link_to 'Edit', edit_itemholdon_path(@itemholdon) %> |
+<%= link_to 'Back', itemholdons_path %>

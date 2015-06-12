@@ -1,0 +1,33 @@
+<%= form_for(@itemholdon) do |f| %>
+  <% if @itemholdon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@itemholdon.errors.count, "error") %> prohibited this itemholdon from being saved:</h2>
+
+      <ul>
+      <% @itemholdon.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :shopifyId %><br>
+    <%= f.text_field :shopifyId %>
+  </div>
+  <div class="field">
+    <%= f.label :minStock %><br>
+    <%= f.number_field :minStock %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br>
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :untilDate %><br>
+    <%= f.datetime_select :untilDate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
