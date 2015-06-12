@@ -22,8 +22,10 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: itemscartholdon
+  database: d2hh1osk67elsv
   pool: 5
   timeout: 5000
-  username: root
-  password: 123
+  username: tbqaavzbqgfdxj
+  password: SQhBdS9hTgPrqpDwy8H0lgCWJW
+  host: ec2-54-83-17-8.compute-1.amazonaws.com
+  port: 5432
