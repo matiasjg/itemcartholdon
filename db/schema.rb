@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150612171331) do
+ActiveRecord::Schema.define(version: 20150612194219) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "itemholdons", force: true do |t|
     t.string   "shopifyId"
@@ -21,5 +24,14 @@ ActiveRecord::Schema.define(version: 20150612171331) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "shops", force: true do |t|
+    t.string   "shopify_domain", null: false
+    t.string   "shopify_token",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "shops", ["shopify_domain"], name: "index_shops_on_shopify_domain", unique: true, using: :btree
 
 end
