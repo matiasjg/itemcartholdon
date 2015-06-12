@@ -13,7 +13,7 @@
     <% @products.each do |product| %>
       <tr>
         <td>
-          <%= product.id %> - <%= product.name %> - <a href="itemholdons/new?id=<%= product.id %>">Set HoldOn Product</a>
+          <%= product.id %> - <%= product.title %> - <a href="itemholdons/new?id=<%= product.id %>">Set HoldOn Product</a>
         </td>
       </tr>
     <% end %>
