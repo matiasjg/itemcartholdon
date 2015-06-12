@@ -1,4 +1,4 @@
-<h1>New itemholdon</h1>
+<h1><% if defined?product %><%= @product.title %><% end %>Add HoldOn</h1>
 
 <%= render 'form' %>
 

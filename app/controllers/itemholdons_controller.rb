@@ -14,7 +14,16 @@ class ItemholdonsController < ApplicationController
 
   # GET /itemholdons/new
   def new
-    @itemholdon = Itemholdon.new
+    if params[:shopifyId] != ''
+        @itemholdon = Itemholdon.find_by shopifyId: params[:shopifyId]
+        unless @itemholdon
+            @itemholdon = Itemholdon.new(create_from_shopify_params)
+        else
+            @product = ShopifyAPI::Product params[:shopifyId]
+        end
+    else
+        @itemholdon = Itemholdon.new(create_from_shopify_params)
+    end
   end
 
   # GET /itemholdons/1/edit
@@ -70,5 +79,9 @@ class ItemholdonsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def itemholdon_params
       params.require(:itemholdon).permit(:shopifyId, :minStock, :active, :untilDate)
+    end
+
+    def create_from_shopify_params
+        params.permit(:shopifyId)
     end
 end
