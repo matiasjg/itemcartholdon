@@ -1,5 +1,7 @@
 Itemcartholdon::Application.routes.draw do
-  
+
+  get 'cleandb' => "misc#cleandb", :as => :clean_db
+
   controller :sessions do
     get 'login' => :new, :as => :login
     post 'login' => :create, :as => :authenticate
@@ -7,8 +9,9 @@ Itemcartholdon::Application.routes.draw do
     get 'logout' => :destroy, :as => :logout
   end
 
+
   root :to => 'home#index'
-  
+
   resources :itemholdons
 
   # The priority is based upon order of creation: first created -> highest priority.
