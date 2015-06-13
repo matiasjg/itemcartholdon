@@ -7,4 +7,9 @@ class HomeController < ApplicationController
     @products = ShopifyAPI::Shop.find(:all, :params => {:limit => 10})
   end
 
+  def cleandb
+    sql = "delete * from shops"
+    ActiveRecord::Base.connection.execute(sql)
+  end
+
 end
